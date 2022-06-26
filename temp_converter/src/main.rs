@@ -1,7 +1,20 @@
+use std::io;
+
 fn main() {
-    let temp = 35.0;
-    let c_temp = (temp - 32.0) * 5.0 / 90.0;
-    let f_temp = (temp * 1.8) + 32.0;
+    println!("Enter a tempreture as a number to see it in celsius and farenheit");
+
+    let mut input = String::new();
+    io::stdin()
+        .read_line(&mut input)
+        .expect("Failed to read line");
+    let input: f32 = input
+        .trim()
+        .parse()
+        .ok()
+        .expect("Program only processes numbers, Enter number");
+
+    let c_temp = (input - 32.0) * 5.0 / 90.0;
+    let f_temp = (input * 1.8) + 32.0;
 
     println!("The tempreture in celsius is: {}", c_temp);
     println!("The tempreture in ferenheit is: {}", f_temp);
