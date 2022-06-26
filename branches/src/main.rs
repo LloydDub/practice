@@ -1,13 +1,7 @@
 fn main() {
-    let mut counter = 0;
+    let a = [10, 20, 30, 40, 50];
 
-    let result = loop {
-        counter += 1;
-
-        if counter == 10 {
-            break counter * 2;
-        }
-    };
-
-    println!("The result is {}", result);
+    for element in a {
+        println!("the value is: {}", element);
+    }
 }
